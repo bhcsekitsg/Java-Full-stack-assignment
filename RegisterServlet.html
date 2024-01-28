@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>User Registration</h2>
+
+    <form action="RegisterServlet" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <%
+
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        if (request.getMethod().equals("POST")) {
+            // Basic email validation
+            if (!email.matches("^\\S+@\\S+\\.\\S+$")) {
+                out.println("<p class='error'>Invalid email format.</p>");
+            } else {
+                // Perform user registration logic here (e.g., store in a database)
+                out.println("<p>User registered successfully!</p>");
+            }
+        }
+
+    %>
+
+</body>
+</html>

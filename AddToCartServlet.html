@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product List</h2>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Product A</td>
+            <td>$10.00</td>
+            <td><a href="AddToCartServlet?product=ProductA">Add to Cart</a></td>
+        </tr>
+        <tr>
+            <td>Product B</td>
+            <td>$15.00</td>
+            <td><a href="AddToCartServlet?product=ProductB">Add to Cart</a></td>
+        </tr>
+        <!-- Add more products as needed -->
+    </table>
+
+    <h2>Shopping Cart</h2>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+                    <td> + product + </td>
+                   <td>$10.00</td>
+                   <td><a href='RemoveFromCartServlet?product=" + product + "'>Remove</a></td>"
+                                          
+    </table>
+
+</body>
+</html>
